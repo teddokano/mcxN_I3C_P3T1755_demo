@@ -9,6 +9,7 @@
 #include	"r01lib.h"
 r01lib_start;	/* *** place this word before making instance of r01lib classes *** */
 
+#include	"temp_sensor/P3T1755.h"
 #include	"pin_control.h"
 #include	<time.h>
 
