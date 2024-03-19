@@ -37,11 +37,13 @@ void init_pin_control( void )
 void led_control_callback( void )
 {
 	static int	count	= 0;
-	int			c200;
-	
-	c200	= (&b == target_ptr) ? count % 200 : 100;
-//	pwm_update( (100 < c200) ? 200 - c200 : c200 );
 
+#ifndef	CPU_MCXN947VDF
+	int			c200;
+	c200	= (&b == target_ptr) ? count % 200 : 100;
+	pwm_update( (100 < c200) ? 200 - c200 : c200 );
+#endif
+	
 	led_pin_control( count );
 	
 	count++;
